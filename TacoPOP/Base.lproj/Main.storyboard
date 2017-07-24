@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G24b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="TacoPOP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8D5-yy-Xqq" customClass="HeaderView" customModule="TacoPOP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Taco-POP" translatesAutoresizingMaskIntoConstraints="NO" id="qXl-Ab-BZB">
+                                        <rect key="frame" x="8" y="16" width="359" height="48"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.72690763153657634" blue="0.92004592609787172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qXl-Ab-BZB" firstAttribute="leading" secondItem="8D5-yy-Xqq" secondAttribute="leading" constant="8" id="5wo-YX-6NA"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="qXl-Ab-BZB" secondAttribute="bottom" constant="8" id="Cco-kU-rQN"/>
+                                    <constraint firstItem="qXl-Ab-BZB" firstAttribute="top" secondItem="8D5-yy-Xqq" secondAttribute="topMargin" constant="8" id="Rih-bI-n9v"/>
+                                    <constraint firstItem="qXl-Ab-BZB" firstAttribute="centerX" secondItem="8D5-yy-Xqq" secondAttribute="centerX" id="cTg-Ka-dT5"/>
+                                    <constraint firstAttribute="trailing" secondItem="qXl-Ab-BZB" secondAttribute="trailing" constant="8" id="fF0-eT-STS"/>
+                                    <constraint firstAttribute="height" constant="80" id="hCI-IN-6CF"/>
+                                    <constraint firstItem="qXl-Ab-BZB" firstAttribute="centerY" secondItem="8D5-yy-Xqq" secondAttribute="centerY" id="oKn-Ab-2UB"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ges-zM-SoF">
+                                <rect key="frame" x="16" y="100" width="343" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U21-Ui-W2Z">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8D5-yy-Xqq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AdL-l4-5xi"/>
+                            <constraint firstItem="ges-zM-SoF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IAs-XQ-wU8"/>
+                            <constraint firstItem="ges-zM-SoF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="J1H-Hl-LT8"/>
+                            <constraint firstItem="8D5-yy-Xqq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hYZ-oX-CHj"/>
+                            <constraint firstItem="ges-zM-SoF" firstAttribute="top" secondItem="8D5-yy-Xqq" secondAttribute="bottom" constant="20" id="mC4-mP-SZI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ges-zM-SoF" secondAttribute="bottom" constant="20" id="nh7-44-hDr"/>
+                            <constraint firstAttribute="trailing" secondItem="8D5-yy-Xqq" secondAttribute="trailing" id="ukZ-rd-TZq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ges-zM-SoF" id="MrJ-Qh-oOG"/>
+                        <outlet property="headerView" destination="8D5-yy-Xqq" id="WP4-sB-nYr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="-5.8470764617691158"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Taco-POP" width="490" height="100"/>
+    </resources>
 </document>
